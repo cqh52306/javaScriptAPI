@@ -20,7 +20,12 @@ ES5之前，可以通过 instanceof Array去判断，但是instanceof 操作符�
 JavaScript的值可以在同一个网页的不同框架之间传来传去，每个页面拥有自己的全局上下文，这就造成了instanceof无法识别
 
 ES5 新增了 Array.isArray()方法。这个方法的目的是最终确定某个值到底是不是数组，无论该值来自哪里。
-
+```js
+//自定义方法实现
+var is_array = function (value) {
+    return Object.prototype.toString.apply(value) === '[object Array]';
+}
+```
 ## 数组方法
 
 * join()
