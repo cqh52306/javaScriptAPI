@@ -44,8 +44,8 @@ ES5 新增了 Array.isArray()方法。这个方法的目的是最终确定某个
 * fill（ES6新增）
 * find和findIndex（ES6新增）
 * keys、values和entries（ES6新增）
-* includes（ES6新增）
-* 数组的空位（ES7新增）
+* includes（ES7新增）
+* 数组的空位
 
 
 1. join()
@@ -458,4 +458,21 @@ Array.prototype.includes方法返回一个布尔值，表示某个数组是否�
 [1, 2, NaN].includes(NaN); // true
 [1, 2, 3].includes(3, 3);  // false
 [1, 2, 3].includes(3, -1); // true
+```
+
+23. 数组的空位
+```js
+数组的空位指，数组的某一个位置没有任何值。比如，Array构造函数返回的数组都是空位。
+注意，空位不是undefined，一个位置的值等于undefined，依然是有值的。空位是没有任何值，
+in运算符可以说明这一点。
+
+* ES5对空位的处理，大多数情况下会忽略空位。
+
++ forEach(), filter(), every() 和some()都会跳过空位。
++ map()会跳过空位，但会保留这个值
++ join()和toString()会将空位视为undefined，而undefined和null会被处理成空字符串。
+
+* ES6则是明确将空位转为undefined。
+  entries()、keys()、values()、find()和findIndex()会将空位处理成undefined。
+PS: 由于空位的处理规则非常不统一，所以建议避免出现空位。
 ```
