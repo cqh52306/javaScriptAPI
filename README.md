@@ -25,7 +25,7 @@ JavaScript没有类的概念，但依然存在两种类型
 
 ## 系列目录
 
-
+1. [JavaScirpt原始封装类型之String](https://github.com/cqh52306/javaScriptAPI/blob/master/src/String.md)
 
 
 ## 勘误及提问
